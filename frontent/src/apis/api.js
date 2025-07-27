@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export const movieslist = async () => {
     
-        const response = await fetch('https://flick-streak-backend.vercel.app/', {
+        const response = await fetch('https://mymovies-sand.vercel.app/', {
             headers: { "authorization": localStorage.getItem('token') }
         });
         const data = await response.json();
@@ -17,7 +17,7 @@ export const movieslist = async () => {
 }
 
 export const getsearch=async(seachdata)=>{
-    const response=await fetch(`https://flick-streak-backend.vercel.app/search?q=${seachdata}`);
+    const response=await fetch(`https://mymovies-sand.vercel.app/search?q=${seachdata}`);
     const data=await response.json();
     return data;
 }

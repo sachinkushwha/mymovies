@@ -20,7 +20,7 @@ const Login = () => {
         password:password.current.value
     }
     try {
-      const response = await fetch('https://flick-streak-backend.vercel.app/auth/login', {
+      const response = await fetch('https://mymovies-sand.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

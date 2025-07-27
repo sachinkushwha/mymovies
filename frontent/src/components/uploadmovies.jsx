@@ -14,7 +14,7 @@ export default function MovieForm() {
             Thumbnail: Thumbnail.current.value,
             movielink: movielink.current.value
         }
-        const response = await fetch('https://flick-streak-backend.vercel.app/movies', {
+        const response = await fetch('https://mymovies-sand.vercel.app/movies', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
