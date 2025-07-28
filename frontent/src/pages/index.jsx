@@ -16,6 +16,7 @@ const {result}=useContext(SearchContex);
 
   return (
     <>
+    {movie? <h></h> :<h1>loading...</h1>}
     {result.length>0?<Carts movie={result} />:<Carts movie={movie} />}
     </>
   )
