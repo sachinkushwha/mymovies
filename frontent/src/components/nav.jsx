@@ -31,7 +31,7 @@ export const Nav = () => {
     return (
         <div className="bg-blue-500 text-white font-bold px-4 py-3 w-full">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-                <Link className="text-xl" onClick={()=>setResult([])} to="/">🎬FlickStreak</Link>
+                <Link className="text-xl" onClick={()=>setResult([])} to="/">Streamify</Link>
  <div className="flex-1 text-center">
       <Search/>
     </div>

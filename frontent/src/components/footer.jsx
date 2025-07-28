@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
         {/* Logo and Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white">🎬 FlickStreak</h2>
+          <h2 className="text-2xl font-bold text-white">🎬 Streamify</h2>
           <p className="text-sm mt-2">Your ultimate destination for movies, reviews, and more.</p>
         </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center mt-8 border-t border-gray-700 pt-4 text-xs">
-        © 2025 FlickStreak. All rights reserved.
+        © 2025 Streamify. All rights reserved.
       </div>
     </footer>
   );

@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { getsearch } from "../apis/api";
-import { Carts } from "./carts";
 import { SearchContex } from "../searchContex/searchContex";
 
 export const Search = () => {
