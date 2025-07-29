@@ -19,7 +19,7 @@ export const Search = () => {
             onSubmit={handleSearch}
             className="w-full px-4 sm:px-6 md:px-8 lg:px-0"
         >
-            <div className="flex items-center rounded-full overflow-hidden w-[100px] sm:w-full max-w-xl mx-auto bg-white border">
+            <div className="flex items-center rounded-full overflow-hidden w-[150px] sm:w-full max-w-xl mx-auto bg-white border">
                 <input
                     type="text"
                     placeholder="Search"
