@@ -4,7 +4,7 @@ import { Search } from "./search";
 import { SearchContex } from "../searchContex/searchContex";
 
 export const Nav = () => {
-    const {setResult}=useContext(SearchContex);
+    const { setResult } = useContext(SearchContex);
     const navigate = useNavigate();
     const [user, setuser] = useState(localStorage.getItem('logedinuser'));
     const [isOpen, setIsOpen] = useState(false);
@@ -24,35 +24,36 @@ export const Nav = () => {
         navigate('/');
     };
 
-    const handleisopneandsearchresult=()=>{
-        setIsOpen(false);
-        setResult([]);
-    }
+const handleprofile=()=>{
+    console.log("profile clicked");
+}
     return (
         <div className="bg-blue-500 text-white font-bold px-4 py-3 w-full">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-                <Link className="text-xl" onClick={()=>setResult([])} to="/">Streamify</Link>
- <div className="flex-1 text-center">
-      <Search/>
-    </div>
+                <Link className="text-xl" onClick={() => setResult([])} to="/">Streamify</Link>
+                <div className="flex-1 text-center">
+                    <Search />
+                </div>
                 <div className="flex items-center gap-4 md:hidden">
-                    {user && <span>{user.charAt(0).toUpperCase()+user.slice(1).split(" ")[0]}</span>}
+
                     <button
-                        className="text-white text-xl"
+                        className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        ☰
+                        {user.charAt(0).toUpperCase()}
                     </button>
+                    
+
                 </div>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-6">
-                    <Link onClick={()=>setResult([])} to="/">Home</Link>
+                    <Link onClick={() => setResult([])} to="/">Home</Link>
                     {user ? (
                         <>
                             <Link onClick={handlelogout}>Logout</Link>
                             <Link to="/upload">Upload</Link>
-                            <span>{user.charAt(0).toUpperCase()+user.slice(1).split(" ")[0]}</span>
+                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{user.charAt(0).toUpperCase()}</span>
                         </>
                     ) : (
                         <Link to="/login">Login</Link>
@@ -63,11 +64,12 @@ export const Nav = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="mt-3 md:hidden flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
-                    <Link to="/" onClick={handleisopneandsearchresult}>Home</Link>
                     {user ? (
                         <>
-                            <Link onClick={() => { handlelogout(); setIsOpen(false); }}>Logout</Link>
+                            {user && <span>{user.charAt(0).toUpperCase() + user.slice(1).split(" ")[0]}</span>}
                             <Link to="/upload" onClick={() => setIsOpen(false)}>Upload</Link>
+                            <Link onClick={() => { handlelogout(); setIsOpen(false); }}>Logout</Link>
+
                         </>
                     ) : (
                         <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>

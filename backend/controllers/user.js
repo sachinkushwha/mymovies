@@ -14,6 +14,9 @@ exports.Search=async (req,res)=>{
   }
 }
 
-exports.Onemovie=async(req,res)=>{
-  console.log(req.params.id);
-}
+// exports.Onemovie=async(req,res)=>{
+//   console.log(req.params.id);
+// }
+// exports.Check=(req,res)=>{
+//   res.status(200).json(req.user);
+// }
