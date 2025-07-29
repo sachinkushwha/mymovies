@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export const movieslist = async () => {
     
-        const response = await fetch('https://mymovies-sand.vercel.app/', {
+        const response = await fetch('https://mymovies-5lhu.vercel.app/', {
             headers: { "authorization": localStorage.getItem('token') }
         });
         const data = await response.json();
