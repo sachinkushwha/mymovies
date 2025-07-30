@@ -7,7 +7,7 @@ exports.Home=async (req,res)=>{
 exports.Search=async (req,res)=>{
   try{
   const query=req.query.q;
-  const data=await moviedb.find({moviename:{$regex:query,$options:"i"},});
+  const data=await moviedb.find({moviename:{$regex:query,$options:"i"},}).populate('userId');
   res.status(200).json(data);
   }catch(err){
     res.status(500).json({message:"search faild",err})
