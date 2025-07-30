@@ -8,7 +8,6 @@ export const Nav = () => {
     const navigate = useNavigate();
     const [user, setuser] = useState(localStorage.getItem('logedinuser'));
     const [isOpen, setIsOpen] = useState(false);
-console.log(user[0]);
     useEffect(() => {
         const updateuser = () => {
             setuser(localStorage.getItem('logedinuser'));
@@ -40,7 +39,7 @@ const handleprofile=()=>{
                         className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {(user?.[0] || user?.charAt(0) || '').toUpperCase()}
+                        {(user)}
                     </button>
                     
 
@@ -53,7 +52,7 @@ const handleprofile=()=>{
                         <>
                             <Link onClick={handlelogout}>Logout</Link>
                             <Link to="/upload">Upload</Link>
-                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(user?.[0] || user?.charAt(0) || '').toUpperCase()}</span>
+                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(user)}</span>
                         </>
                     ) : (
                         <Link to="/login">Login</Link>
