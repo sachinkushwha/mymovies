@@ -40,7 +40,7 @@ const handleprofile=()=>{
                         className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {user.charAt(0).toUpperCase()}
+                        {user}
                     </button>
                     
 
@@ -66,7 +66,7 @@ const handleprofile=()=>{
                 <div className="mt-3 md:hidden flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
                     {user ? (
                         <>
-                            {user && <span>{user.charAt(0).toUpperCase() + user.slice(1).split(" ")[0]}</span>}
+                            {user && <span>{user}</span>}
                             <Link to="/upload" onClick={() => setIsOpen(false)}>Upload</Link>
                             <Link onClick={() => { handlelogout(); setIsOpen(false); }}>Logout</Link>
 
