@@ -8,7 +8,7 @@ export const Nav = () => {
     const navigate = useNavigate();
     const [user, setuser] = useState(localStorage.getItem('logedinuser'));
     const [isOpen, setIsOpen] = useState(false);
-console.log(user);
+console.log(user[0]);
     useEffect(() => {
         const updateuser = () => {
             setuser(localStorage.getItem('logedinuser'));
