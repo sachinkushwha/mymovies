@@ -39,7 +39,7 @@ const handleprofile=()=>{
                         className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {(user)}
+                        {(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}
                     </button>
                     
 
@@ -52,7 +52,7 @@ const handleprofile=()=>{
                         <>
                             <Link onClick={handlelogout}>Logout</Link>
                             <Link to="/upload">Upload</Link>
-                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(user)}</span>
+                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}</span>
                         </>
                     ) : (
                         <Link to="/login">Login</Link>
