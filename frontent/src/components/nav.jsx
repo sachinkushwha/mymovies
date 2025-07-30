@@ -23,9 +23,9 @@ export const Nav = () => {
         navigate('/');
     };
 
-const handleprofile=()=>{
-    console.log("profile clicked");
-}
+    const handleprofile = () => {
+        console.log("profile clicked");
+    }
     return (
         <div className="bg-blue-500 text-white font-bold px-4 py-3 w-full">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -35,13 +35,14 @@ const handleprofile=()=>{
                 </div>
                 <div className="flex items-center gap-4 md:hidden">
 
-                    <button
+                    {user ? <button
                         className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}
-                    </button>
-                    
+                    </button> : "Login"}
+
+
 
                 </div>
 
