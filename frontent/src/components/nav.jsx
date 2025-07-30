@@ -40,7 +40,7 @@ const handleprofile=()=>{
                         className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {user.at(0)}
+                        {user[0] || user.charAt(0) }
                     </button>
                     
 
