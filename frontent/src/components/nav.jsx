@@ -66,7 +66,7 @@ const handleprofile=()=>{
                 <div className="mt-3 md:hidden flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
                     {user ? (
                         <>
-                            {user && <span>{user[0].toUpperCase()}</span>}
+                            {user && <span>{user}</span>}
                             <Link to="/upload" onClick={() => setIsOpen(false)}>Upload</Link>
                             <Link onClick={() => { handlelogout(); setIsOpen(false); }}>Logout</Link>
 
