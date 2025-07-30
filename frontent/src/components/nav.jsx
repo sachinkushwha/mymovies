@@ -40,7 +40,7 @@ export const Nav = () => {
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}
-                    </button> : "Login"}
+                    </button> : <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>}
 
 
 
@@ -64,16 +64,14 @@ export const Nav = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="mt-3 md:hidden flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
-                    {user ? (
+                    {user && (
                         <>
                             {user && <span>{user}</span>}
                             <Link to="/upload" onClick={() => setIsOpen(false)}>Upload</Link>
                             <Link onClick={() => { handlelogout(); setIsOpen(false); }}>Logout</Link>
 
                         </>
-                    ) : (
-                        <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>
-                    )}
+                    ) }
                 </div>
             )}
         </div>
