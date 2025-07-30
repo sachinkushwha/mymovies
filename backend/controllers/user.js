@@ -1,6 +1,6 @@
 const moviedb=require('../models/movie_db');
 exports.Home=async (req,res)=>{
-  const movie=await moviedb.find();
+  const movie=await moviedb.find().populate('userId');
       res.status(200).json(movie);
 }
 
