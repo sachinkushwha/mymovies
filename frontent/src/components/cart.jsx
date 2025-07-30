@@ -23,7 +23,7 @@ export const Cart = ({ mov }) => {
           alt="Channel Logo"
           className="w-10 h-10 rounded-full"
         /> */}
-        <p className="w-10 h-10 shrink-0 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{ mov.userId?.name.charAt(0).toUpperCase()}</p>
+        <p className="w-10 h-10 shrink-0 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{ mov.userId?.name}</p>
         <div>
           <h3 className="text-xl  font-semibold line-clamp-2">
           {mov.moviename}
