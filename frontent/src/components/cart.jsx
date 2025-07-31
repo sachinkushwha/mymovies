@@ -3,6 +3,7 @@ import { ShareIcon } from "./sharebutton";
 import { use } from "react";
 
 export const Cart = ({ mov }) => {
+  console.log(mov.userId)
   return (
     <div className="w-80  rounded-2xl shadow-lg  bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer m-2">
      <Link  to={mov.movielink} target="_blank"> <img
@@ -23,7 +24,7 @@ export const Cart = ({ mov }) => {
           alt="Channel Logo"
           className="w-10 h-10 rounded-full"
         /> */}
-        <p className="w-10 h-10 shrink-0 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{ mov.userId?.name[0].toUpperCase()}</p>
+        {/* <p className="w-10 h-10 shrink-0 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{ mov.userId?.name[0].toUpperCase()}</p> */}
         <div>
           <h3 className="text-xl  font-semibold line-clamp-2">
           {mov.moviename}

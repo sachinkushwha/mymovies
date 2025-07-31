@@ -8,6 +8,6 @@ exports.Movies=async (req,res)=>{
 }
 exports.Profile=async(req,res)=>{
     const userId=req.user._id;
-    const profileData=await movieDb.find({userId});
+    const profileData=await movieDb.find({userId}).populate('userId');
     res.status(200).json(profileData);
 }
