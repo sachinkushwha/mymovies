@@ -3,7 +3,6 @@ import { ShareIcon } from "./sharebutton";
 import { use } from "react";
 
 export const Cart = ({ mov }) => {
-  console.log(mov.userId)
   return (
     <div className="w-80  rounded-2xl shadow-lg  bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer m-2">
      <Link  to={mov.movielink} target="_blank"> <img
