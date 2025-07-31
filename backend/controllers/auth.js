@@ -49,7 +49,6 @@ exports.Login= async (req,res)=>{
         success:true,
         jwtToken,
         email,
-        userId:user._id,
         name:user.name
     })
 }catch(err){

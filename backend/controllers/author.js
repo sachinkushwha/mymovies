@@ -6,3 +6,8 @@ exports.Movies=async (req,res)=>{
     await moviedata.save(); 
     res.status(200).json('movie add successfuly');
 }
+exports.Profile=async(req,res)=>{
+    const userId=req.user._id;
+    const profileData=await movieDb.find({userId});
+    res.status(200).json(profileData);
+}
