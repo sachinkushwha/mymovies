@@ -23,7 +23,9 @@ export const getsearch=async(seachdata)=>{
 }
 
 export const getuserdata=async(userId)=>{
-    const response=await fetch('https://mymovies-sand.vercel.app/profile')
+    const response=await fetch('https://mymovies-sand.vercel.app/profile',{
+        headers:{"authorization":localStorage.getItem('token')}
+    })
     const data=await response.json();
     return data;
 }

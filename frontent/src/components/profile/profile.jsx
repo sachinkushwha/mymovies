@@ -8,9 +8,11 @@ export const Profile=()=>{
     useEffect(()=>{
         getuserdata().then((data)=>{
             setmovie(data);
+            console.log(data);
         })
     })
     return<>
-    <Cart movie={movie} />
+    <h1>{user}</h1>
+    {/* <Cart movie={movie} /> */}
     </>
 }
