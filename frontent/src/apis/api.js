@@ -21,3 +21,7 @@ export const getsearch=async(seachdata)=>{
     const data=await response.json();
     return data;
 }
+
+export const getuserdata=async(userId)=>{
+    const response=await fetch('https://mymovies-sand.vercel.app')
+}

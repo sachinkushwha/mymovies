@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Signup from './components/singup.jsx';
 import  Login  from './components/login.jsx';
 import MovieForm from './components/uploadmovies.jsx';
+import { Profile } from './components/profile/profile.jsx';
 // import { Onemovie } from './components/onemovie.jsx';
 
 const router=createBrowserRouter([
@@ -26,6 +27,9 @@ const router=createBrowserRouter([
       // {
       //   path:'/movie/:id',element:<Onemovie/>
       // }
+      {
+        path:'/profile', element:<Profile/>
+      }
     ]
   }
 ])
