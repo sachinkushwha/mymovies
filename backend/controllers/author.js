@@ -16,3 +16,19 @@ exports.Profile = async (req, res) => {
     const profileData = await movieDb.find({ userId }).populate({ path: 'userId', select: "-password" });
     res.status(200).json(profileData);
 }
+
+exports.Delete=async(req,res)=>{
+    try{
+console.log(req.params.id);
+    const result=await movieDb.findByIdAndDelete(req.params.id);
+    if(result){
+        res.status(200).json('item delete successfuly');
+    }else{
+        res.status(404).json('item not found');
+    }
+    }catch(err){
+        res.status(500).json('server error');
+    }
+    
+
+}

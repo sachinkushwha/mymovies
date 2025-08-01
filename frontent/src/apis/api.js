@@ -29,3 +29,12 @@ export const getuserdata=async(userId)=>{
     const data=await response.json();
     return data;
 }
+export const deletemovie=async(id)=>{
+    console.log(id);
+    const response=await fetch(`https://mymovies-sand.vercel.app/delete/${id}`,{
+        method:'DELETE',
+        headers:{'authorization':localStorage.getItem('token')}
+    });
+    const data=await response.json();
+    return data;
+}

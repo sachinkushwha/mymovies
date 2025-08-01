@@ -26,7 +26,6 @@ export default function MovieForm() {
         moviename.current.value = "";
         Thumbnail.current.value = "";
         movielink.current.value = "";
-        console.log(result);
         if(result){
             alert(result);
             navigate('/');

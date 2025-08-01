@@ -6,12 +6,8 @@ import { WaveLoader } from "../components/loader";
 
 export const Index = () => {
 const {result}=useContext(SearchContex);
-  const [movie, setmovie] = useState([]);
-  useEffect(() => {
-      movieslist().then((data) => {
-        setmovie(data);
-      })
-  }, []);
+const {movie}=useContext(SearchContex);
+ 
 
   
 
