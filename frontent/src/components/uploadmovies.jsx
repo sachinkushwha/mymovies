@@ -1,11 +1,26 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getuserdata, movieslist } from '../apis/api';
+import { SearchContex } from '../searchContex/searchContex';
 
 export default function MovieForm() {
+   const {setusermovie}= useContext(SearchContex);
+   const {setmovie}= useContext(SearchContex);
+    const handleprofile = () => {
+        getuserdata().then((data) => {
+            setusermovie(data);
+            console.log(data);
+        })
+    }
+    const handlemovie=()=>{
+        movieslist().then(data=>{
+            setmovie(data);
+        })
+    }
     const moviename = useRef();
     const Thumbnail = useRef();
     const movielink = useRef();
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,7 +41,9 @@ export default function MovieForm() {
         moviename.current.value = "";
         Thumbnail.current.value = "";
         movielink.current.value = "";
-        if(result){
+        if (result) {
+            handleprofile();
+            handlemovie();
             alert(result);
             navigate('/');
         }

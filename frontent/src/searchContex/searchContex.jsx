@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { deletemovie, movieslist } from "../apis/api";
-import { getuserdata } from "../apis/api";
+import { deletemovie, getuserdata, movieslist } from "../apis/api";
 export const SearchContex = createContext({
     result: [],
     movie: [],
@@ -22,22 +21,23 @@ export const SearchProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        getuserdata().then((data) => {
+        getuserdata().then(data => {
             setusermovie(data);
-            console.log(data);
         })
     }, [])
-
-    const handleDelete=async(id)=>{
-        deletemovie(id).then(res=>{
-         if(res.ok){
-            setusermovie((prev)=>prev.filter((movie)=>movie._id!==id));
-         }
-        })
+    const handleDelete = async (id) => {
+        try {
+            setusermovie((prev) => prev.filter((movie) => movie._id !== id));
+            setmovie((prev) => prev.filter((movie) => movie._id !== id));
+            deletemovie(id)
+        }catch(err){
+            console.log("delete error ",err);
+        }
+        
     }
 
     return (
-        <SearchContex.Provider value={{handleDelete, result, movie,usermovie,setusermovie, setmovie, setResult }}>
+        <SearchContex.Provider value={{ handleDelete, result, movie, usermovie, setusermovie, setmovie, setResult }}>
             {children}
         </SearchContex.Provider>
     );

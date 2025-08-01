@@ -1,10 +1,11 @@
 import { useContext, useEffect,  } from "react";
 import { Carts } from "./carts";
 import { WaveLoader } from "../loader";
+import { getuserdata } from "../../apis/api";
 import { SearchContex } from "../../searchContex/searchContex";
 export const Profile=()=>{
     const user = localStorage.getItem('logedinuser');
-   const {usermovie}= useContext(SearchContex);
+   const {usermovie,setusermovie}= useContext(SearchContex);
     
     return<>
     {usermovie.length>0?<></>:(
