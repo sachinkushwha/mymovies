@@ -33,6 +33,7 @@ export const Update = () => {
             body: JSON.stringify(updated)
         })
         const result = await response.json();
+        console.log("result",result);
         if (result) {
             navigate('/profile')
         }

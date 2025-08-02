@@ -35,8 +35,8 @@ exports.Delete = async (req, res) => {
 exports.Update = async (req, res) => {
     try {
         const id = req.params.id;
-        const data = req.body;
-        const result = await movieDb.findByIdAndUpdate(id, data, { new: true });
+        const {name,thumbnail,link} = req.body;
+        const result = await movieDb.findByIdAndUpdate(id, {moviename:name,Thumbnail:thumbnail,movielink:link}, { new: true });
         console.log(result);
         res.status(200).json(result);
     }catch(err){
