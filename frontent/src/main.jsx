@@ -7,6 +7,7 @@ import Signup from './components/singup.jsx';
 import  Login  from './components/login.jsx';
 import MovieForm from './components/uploadmovies.jsx';
 import { Profile } from './components/profile/profile.jsx';
+import { Update } from './components/profile/updateform.jsx';
 // import { Onemovie } from './components/onemovie.jsx';
 
 const router=createBrowserRouter([
@@ -29,6 +30,9 @@ const router=createBrowserRouter([
       // }
       {
         path:'/profile', element:<Profile/>
+      },
+      {
+        path:'/update', element:<Update/>
       }
     ]
   }

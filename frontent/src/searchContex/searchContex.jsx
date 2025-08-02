@@ -13,7 +13,6 @@ export const SearchProvider = ({ children }) => {
     const [result, setResult] = useState([]);
     const [movie, setmovie] = useState([]);
     const [usermovie, setusermovie] = useState([]);
-
     useEffect(() => {
         movieslist().then((data) => {
             setmovie(data);
@@ -37,7 +36,7 @@ export const SearchProvider = ({ children }) => {
     }
 
     return (
-        <SearchContex.Provider value={{ handleDelete, result, movie, usermovie, setusermovie, setmovie, setResult }}>
+        <SearchContex.Provider value={{handleDelete, result, movie, usermovie, setusermovie, setmovie, setResult }}>
             {children}
         </SearchContex.Provider>
     );

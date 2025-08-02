@@ -5,4 +5,5 @@ const authorController=require('../controllers/author');
 authorRouter.post('/movies',jwtauth,authorController.Movies);
 authorRouter.get('/profile',jwtauth,authorController.Profile);
 authorRouter.delete('/delete/:id',jwtauth,authorController.Delete);
+authorRouter.put('/update/:id',jwtauth,authorController.Update);
 exports.authorRouter=authorRouter;
