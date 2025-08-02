@@ -1,8 +1,24 @@
 import { useEffect, useRef } from "react"
 import { FaAws } from "react-icons/fa";
+import { getuserdata } from "../../apis/api";
+import { movieslist } from "../../apis/api";
 import { useNavigate } from "react-router-dom";
-
+import { SearchContex } from "../../searchContex/searchContex";
+import { useContext } from "react";
 export const Update = () => {
+    const {setusermovie}= useContext(SearchContex);
+   const {setmovie}= useContext(SearchContex);
+    const handleprofile = () => {
+        getuserdata().then((data) => {
+            setusermovie(data);
+            console.log(data);
+        })
+    }
+    const handlemovie=()=>{
+        movieslist().then(data=>{
+            setmovie(data);
+        })
+    }
     const navigate = useNavigate();
     const nameRef = useRef();
     const thumbnailRef = useRef()
@@ -23,7 +39,6 @@ export const Update = () => {
             thumbnail: thumbnailRef.current.value,
             link: linkRef.current.value
         }
-        // console.log(updated);
         const response = await fetch(`https://mymovies-sand.vercel.app/update/${JSON.parse(localStorage.getItem('updatedata')).id}`, {
             method: "PUT",
             headers: {
@@ -33,8 +48,9 @@ export const Update = () => {
             body: JSON.stringify(updated)
         })
         const result = await response.json();
-        console.log("result",result);
         if (result) {
+            handleprofile();
+            handlemovie();
             navigate('/profile')
         }
 

@@ -41,11 +41,16 @@ export default function MovieForm() {
         moviename.current.value = "";
         Thumbnail.current.value = "";
         movielink.current.value = "";
-        if (result) {
+        if (result==="movie add successfuly") {
             handleprofile();
             handlemovie();
             alert(result);
             navigate('/');
+        }else{
+            alert('your session is expire, login agin');
+            localStorage.removeItem('token');
+            localStorage.removeItem('logedinuser');
+            navigate('/login');
         }
     };
 
