@@ -4,7 +4,8 @@ import { movieslist } from "../apis/api"
 import { SearchContex } from "../searchContex/searchContex";
 import { WaveLoader } from "../components/loader";
 
-export const Index = () => {
+export const Index = ({query}) => {
+  console.log(query);
 const {result}=useContext(SearchContex);
 const {movie}=useContext(SearchContex);
  

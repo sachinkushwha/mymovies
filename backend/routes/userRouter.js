@@ -4,6 +4,5 @@ const userControllers=require('../controllers/user');
 const {jwtauth}=require('../middilwares/jwtauth')
 userRouter.get('/',userControllers.Home);
 // userRouter.get('/check',jwtauth,userControllers.Check);
-userRouter.get('/search',userControllers.Search);
 // userRouter.get('/movie/:id',userControllers.Onemovie);
 exports.userRouter=userRouter;

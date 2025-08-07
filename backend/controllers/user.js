@@ -4,16 +4,7 @@ exports.Home=async (req,res)=>{
       res.status(200).json(movie);
 }
 
-exports.Search=async (req,res)=>{
-  try{
-  const query=req.query.q.replace(/[- ]/g,'');
-  const filterquery=query.split('').join('[- ]?')
-  const data=await moviedb.find({moviename:{$regex:filterquery,$options:"i"},}).populate({path:'userId',select:'-password'});
-  res.status(200).json(data);
-  }catch(err){
-    res.status(500).json({message:"search faild",err})
-  }
-}
+
 
 // exports.Onemovie=async(req,res)=>{
 //   console.log(req.params.id);
