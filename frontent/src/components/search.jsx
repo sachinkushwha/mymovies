@@ -8,7 +8,7 @@ export const Search = () => {
     const [query, setQuery] = useState("");
     const {setResult}=useContext(SearchContex);
     const handleSearch = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
           getsearch(query).then((data)=>{
             setResult(data)
           })

@@ -6,7 +6,7 @@ exports.Home=async (req,res)=>{
 
 exports.Search=async (req,res)=>{
   try{
-  const query=req.query.q;
+  const query=req.query.q.replace(/[- ]/g,'');
   const data=await moviedb.find({moviename:{$regex:query,$options:"i"},}).populate({path:'userId',select:'-password'});
   res.status(200).json(data);
   }catch(err){
