@@ -7,7 +7,8 @@ exports.Home=async (req,res)=>{
 exports.Search=async (req,res)=>{
   try{
   const query=req.query.q.replace(/[- ]/g,'');
-  const data=await moviedb.find({moviename:{$regex:query,$options:"i"},}).populate({path:'userId',select:'-password'});
+  const filterquery=query.split('').join('[- ]?')
+  const data=await moviedb.find({moviename:{$regex:filterquery,$options:"i"},}).populate({path:'userId',select:'-password'});
   res.status(200).json(data);
   }catch(err){
     res.status(500).json({message:"search faild",err})

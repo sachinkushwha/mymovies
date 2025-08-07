@@ -3,7 +3,7 @@ exports.Movies = async (req, res) => {
     try {
         const userId = req.user._id;
         const { moviename, Thumbnail, movielink } = req.body;
-        const moviedata = new movieDb({ moviename:moviename.replace(/[- ]/g,''), Thumbnail, movielink, userId });
+        const moviedata = new movieDb({ moviename, Thumbnail, movielink, userId });
         await moviedata.save();
         res.status(200).json('movie add successfuly');
     } catch (err) {
@@ -36,7 +36,7 @@ exports.Update = async (req, res) => {
     try {
         const id = req.params.id;
         const {name,thumbnail,link} = req.body;
-        const result = await movieDb.findByIdAndUpdate(id, {moviename:name.replace(/[- ]/g,''),Thumbnail:thumbnail,movielink:link}, { new: true });
+        const result = await movieDb.findByIdAndUpdate(id, {moviename:name,Thumbnail:thumbnail,movielink:link}, { new: true });
         console.log(result);
         res.status(200).json(result);
     }catch(err){
