@@ -5,7 +5,7 @@ import { SearchContex } from "../searchContex/searchContex";
 export const Search = () => {
     const [query, setQuery] = useState("");
     const { setResult ,movie} = useContext(SearchContex);
-    const searchresult = movie.filter(mo => mo.moviename.replace(/[- ]/g,'').toLowerCase().includes(query));
+    const searchresult = movie.filter(mo => mo.moviename.replace(/[- ]/g,'').toLowerCase().includes(query.toLowerCase()));
     useEffect(() => {
         setResult(searchresult);
     },[query])
