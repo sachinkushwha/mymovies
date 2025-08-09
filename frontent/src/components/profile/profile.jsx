@@ -8,13 +8,14 @@ export const Profile=()=>{
    const {usermovie,setusermovie}= useContext(SearchContex);
     
     return<>
+    <h1 className="text-2xl font-bold items-center mt-10 flex justify-center my-10">{user[0].toUpperCase()+user.slice(1)}</h1>
+   
     {usermovie.length>0?<></>:(
           <div className="flex flex-wrap justify-center gap-4 p-4">
           {[...Array(6)].map((_,i)=>(<WaveLoader key={i}/>))}
           </div>
         )}
-    <h1 className="text-2xl font-bold items-center mt-10 flex justify-center my-10">{user[0].toUpperCase()+user.slice(1)}</h1>
-    <Carts movie={usermovie} />
+     <Carts movie={usermovie?usermovie:[]} />
     
     </>
 }

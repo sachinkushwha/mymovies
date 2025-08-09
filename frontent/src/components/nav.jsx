@@ -62,7 +62,7 @@ export const Nav = () => {
                         <>
                             <Link onClick={handlelogout}>Logout</Link>
                             
-                            <span onClick={handleprofile} className="w-10 h-10 rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}<Dropdown handledropdown={isDrop}/></span>
+                            <span onClick={handleprofile} className="w-10 h-10 cursor-pointer rounded-full bg-blue-600 text-white text-xl flex items-center justify-center shadow hover:bg-blue-700 transition">{(typeof user === 'string' && user.length > 0 ? user[0].toUpperCase() : "")}<Dropdown handledropdown={isDrop}/></span>
                         </>
                     ) : (
                         <Link to="/login">Login</Link>
@@ -73,7 +73,7 @@ export const Nav = () => {
             {/* Mobile Menu */}
             {
                 isOpen && (
-                    <div className="mt-3 md:hidden flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
+                    <div className="mt-3 md:hidden cursor-pointer flex flex-col items-center gap-3 bg-blue-600 p-4 rounded">
                         {user && (
                             <>
                                 {user && <Link onClick={() => setIsOpen(!isOpen)} to="/profile">{user}</Link>}
