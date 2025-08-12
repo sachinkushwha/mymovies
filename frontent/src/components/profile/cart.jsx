@@ -26,7 +26,6 @@ export const Cart = ({ mov }) => {
   return (
 
     <div className="w-80  rounded-2xl shadow-lg  bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer m-2">
-      <h1>host cart</h1>
       <Link to={mov.movielink} target="_blank"> <img
         src={mov.Thumbnail}
         loading="lazy"
