@@ -7,7 +7,7 @@ export const UserProfile = () => {
     const { userId } = useParams();
     const { movie } = useContext(SearchContex);
     const usermovie = movie.filter(mov => mov.userId?._id.includes(userId));
-    console.log("user", movie);
+    console.log("user profile", movie);
     
     return <>
        <h1 className="text-2xl font-bold items-center mt-10 flex justify-center my-10">{usermovie[0]?.userId?.name[0].toUpperCase()+usermovie[0]?.userId?.name.slice(1)}</h1>

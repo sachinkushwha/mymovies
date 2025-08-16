@@ -10,7 +10,7 @@ export const ShareIcon = ({mov}) => {
             navigator.share({
                 url:window.location.href,
             });
-            console.log(mov);
+            console.log("share button",mov);
         }catch(err){
             alert("share not suport on this browser");
         }

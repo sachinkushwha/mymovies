@@ -5,7 +5,7 @@ import { SearchContex } from "../searchContex/searchContex";
 import { WaveLoader } from "../components/loader";
 
 export const Index = ({query}) => {
-  console.log(query);
+  console.log("index",query);
 const {result}=useContext(SearchContex);
 const {movie}=useContext(SearchContex);
  

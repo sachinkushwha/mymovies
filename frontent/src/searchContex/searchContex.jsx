@@ -21,6 +21,7 @@ export const SearchProvider = ({ children }) => {
 
     useEffect(() => {
         getuserdata().then(data => {
+            console.log("test user data searchcontex",data)
             setusermovie(data);
         })
     }, [])

@@ -9,7 +9,7 @@ export default function MovieForm() {
     const handleprofile = () => {
         getuserdata().then((data) => {
             setusermovie(data);
-            console.log(data);
+            console.log("uploadmovie ",data);
         })
     }
     const handlemovie=()=>{
