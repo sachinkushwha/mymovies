@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react"
-import { FaAws } from "react-icons/fa";
 import { getuserdata } from "../../apis/api";
 import { movieslist } from "../../apis/api";
 import { useNavigate } from "react-router-dom";
