@@ -27,7 +27,7 @@ export const movieslist = async () => {
 export const getuserdata=async(userId)=>{
     
     const response=await fetch('https://mymovies-sand.vercel.app/profile',{
-        headers:{"authorization":localStorage.getItem('token')}
+        headers:{"authorization":localStorage.getItem('movietoken')}
     })
     const data=await response.json();
     return data;

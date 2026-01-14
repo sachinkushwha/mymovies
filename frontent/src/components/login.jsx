@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 const Login = () => {
     const navigate=useNavigate();
     useEffect(()=>{
-        if(localStorage.getItem('token')){
+        if(localStorage.getItem('movietoken')){
             navigate('/');
         }
     },[]);
@@ -31,7 +31,7 @@ const Login = () => {
       const result = await response.json();
       const {message,success,jwtToken,name}=result;
       if (success) {
-        localStorage.setItem('token',jwtToken);
+        localStorage.setItem('movietoken',jwtToken);
         localStorage.setItem('logedinuser',name);
         window.dispatchEvent(new Event('logedindatachange'));
         alert(message);

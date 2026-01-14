@@ -19,10 +19,6 @@ export const Cart = ({ mov }) => {
     }
     localStorage.setItem('updatedata',JSON.stringify(updatedatas));
   }
-
-
-
-
   return (
 
     <div className="w-80  rounded-2xl shadow-lg  bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer m-2">
