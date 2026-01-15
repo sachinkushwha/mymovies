@@ -31,7 +31,7 @@ export const Carts = () => {
     return (
         <div className="flex flex-wrap justify-center gap-4 p-4">
             {
-                movie?.map((mo, index) => (
+                data?.map((mo, index) => (
                     <Cart mov={mo} key={index} />
                 ))
             }
