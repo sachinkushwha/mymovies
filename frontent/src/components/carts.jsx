@@ -1,11 +1,13 @@
 import axios from "axios"
 import { Cart } from "./cart"
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 export const Carts = () => {
 
-    const fetchMovies = async ({pageParem=1}) => {
-        const response = await axios.get(`https://mymovies-sand.vercel.app/?page=${pageParem}&limit=6`, {
+    const fetchMovies = async ({ pageParam = 1 }) => {
+        const response = await axios.get(`https://mymovies-sand.vercel.app/?page=${pageParam}&limit=6`, {
+        // const response = await axios.get(`http://localhost:3000/?page=${pageParam}&limit=6`, {
             headers: {
                 'authorization': localStorage.getItem('movietoken')
             }
@@ -13,7 +15,7 @@ export const Carts = () => {
         return response.data;
     }
 
-    const { data,fetchNextPage } = useInfiniteQuery({
+    const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery({
         queryKey: ['movies'],
         queryFn: fetchMovies,
         getNextPageParam: (lastPage, allPage) => {
@@ -25,14 +27,25 @@ export const Carts = () => {
         }
     });
 
-    console.log(data);
-
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                if (hasNextPage && !isFetchingNextPage) {
+                    fetchNextPage();
+                }
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [fetchNextPage, isFetchingNextPage, hasNextPage]);
 
     return (
         <div className="flex flex-wrap justify-center gap-4 p-4">
             {
-                data?.map((mo, index) => (
-                    <Cart mov={mo} key={index} />
+                data?.pages?.map((page) => (
+                    page.map((mov,index)=>(
+                        <Cart mov={mov} key={index}/>
+                    ))
                 ))
             }
         </div>

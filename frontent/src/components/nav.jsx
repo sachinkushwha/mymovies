@@ -20,7 +20,7 @@ export const Nav = () => {
     }, []);
 
     const handlelogout = () => {
-        localStorage.removeItem('token');
+        localStorage.removeItem('movietoken');
         localStorage.removeItem('logedinuser');
         window.dispatchEvent(new Event('logedindatachange'));
         navigate('/');
