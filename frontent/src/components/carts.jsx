@@ -13,7 +13,7 @@ export const Carts = () => {
         return response.data;
     }
 
-    const { data } = useInfiniteQuery({
+    const { data,fetchNextPage } = useInfiniteQuery({
         queryKey: ['movies'],
         queryFn: fetchMovies,
         getNextPageParam: (lastPage, allPage) => {
