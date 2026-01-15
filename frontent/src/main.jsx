@@ -9,6 +9,7 @@ import { Profile } from './components/profile/profile.jsx';
 import { Update } from './components/profile/updateform.jsx';
 import { UserProfile } from './components/userprofile.jsx';
 import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
+import { Carts } from './components/carts.jsx';
 // import { Onemovie } from './components/onemovie.jsx';
 
 const queryClient=new QueryClient();
@@ -16,6 +17,9 @@ const queryClient=new QueryClient();
 const router=createBrowserRouter([
   {
     path:'/',element:<App/>,children:[
+      {
+        path:'/', element:<Carts/>
+      },
       
       {
         path:'/sinup',element:<Signup/>
