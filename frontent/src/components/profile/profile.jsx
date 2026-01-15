@@ -19,6 +19,5 @@ export const Profile = () => {
   return <>
     <h1 className="text-2xl font-bold items-center mt-10 flex justify-center my-10">{user[0].toUpperCase() + user.slice(1)}</h1>
     <Carts/>
-
   </>
 }

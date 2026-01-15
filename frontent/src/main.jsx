@@ -17,9 +17,7 @@ const queryClient=new QueryClient();
 const router=createBrowserRouter([
   {
     path:'/',element:<App/>,children:[
-      {
-        path:'/',element:<Index/>
-      },
+      
       {
         path:'/sinup',element:<Signup/>
       }, 
