@@ -10,7 +10,7 @@ function App() {
     <SearchProvider>
     <Nav />
     <Outlet/>
-    {/* <Footer/> */}
+    <Footer/>
     </SearchProvider>
     </>
   )

@@ -19,7 +19,9 @@ export const Carts = () => {
         {
             isLoading?<div className = "flex flex-wrap justify-center gap-4 p-4">
                     { [...Array(6)].map((_, i) => (<WaveLoader key={i} />)) }
-                </div > : ('')}
+                </div > : ('')
+                
+        }
 <div className="flex flex-wrap justify-center gap-4 p-4">
 
     {
