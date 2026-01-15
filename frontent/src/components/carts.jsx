@@ -6,8 +6,7 @@ import { WaveLoader } from "./loader";
 export const Carts = () => {
 
     const fetchMovies = async ({ pageParam = 1 }) => {
-        // const response = await axios.get(`https://mymovies-sand.vercel.app/?page=${pageParam}&limit=6`, {
-            const response = await axios.get(`http://localhost:3000/?page=${pageParam}&limit=6`, {
+        const response = await axios.get(`https://mymovies-sand.vercel.app/?page=${pageParam}&limit=6`, {
             headers: {
                 'authorization': localStorage.getItem('movietoken')
             }
