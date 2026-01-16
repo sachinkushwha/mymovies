@@ -12,8 +12,11 @@ exports.Movies = async (req, res) => {
 
 }
 exports.Profile = async (req, res) => {
+    const page=req.query.page;
+    const limit=req.query.limit;
+    const skip=(page-1)*limit;
     const userId = req.user._id;
-    const profileData = await movieDb.find({ userId }).populate({ path: 'userId', select: "-password" });
+    const profileData = await movieDb.find({ userId }).skip(skip).limit(limit).populate({ path: 'userId', select: "-password" });
     res.status(200).json(profileData);
 }
 
